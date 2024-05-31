@@ -4,9 +4,12 @@ This is the submission for the web assessment for Stackline.
 
 ## Notes
 
-For this assessment I went forward with implementing both table and graph for the product data. On top of this, the Product Details section was implemented. 
+My submission uses React and Redux best practices, while also implementing Typescript.
 
-For the web page components, they are dynamic in their size depending on the size of the window page. I opted for this approach for a more seamless and pleasing user experience when viewing the data. 
+For this assessment I went forward with implementing both table and graph for the product data. On top of this, the Product Details section was also implemented using the provided image and data. 
+
+For the web page components, they are dynamic in their size depending on the size of the window page. I opted for this approach for a more seamless and pleasing user experience when viewing the data.
+
 
 ## Final Thanks
 
