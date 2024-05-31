@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
+import MaterialTable from "@material-table/core";
 import {useSelector} from "react-redux"
 import {RootState} from "../redux/productStore";
 import { format, parseISO } from "date-fns";
@@ -11,24 +12,35 @@ const ProductTable: React.FC = () => {
 
     const columns = [
         {
-            Header: "WEEK ENDING",
-            id: "weekEnding",
+            title: "WEEK ENDING",
+            field: "weekEnding",
+            sorting: false,
+            render: (rowData: { weekEnding: string; }) => format(parseISO(rowData.weekEnding), "MM-dd-yy"),
         },
         {
-            Header: "RETAIL SALES",
-            id: "retailSales",
+            title: "RETAIL SALES",
+            field: "retailSales",
+            sorting: false,
+            render: (rowData: { retailSales: number }) => `$${rowData.retailSales.toLocaleString()}`,
         },
         {
-            Header: "WHOLESALE SALES",
-            id: "wholesaleSales",
+            title: "WHOLESALE SALES",
+            field: "wholesaleSales",
+            sorting: false,
+            render: (rowData: { wholesaleSales: { toLocaleString: () => any; }; }) => `$${rowData.wholesaleSales.toLocaleString()}`
+
         },
         {
-            Header: "UNITS SOLD",
-            id: "unitsSold",
+            title: "UNITS SOLD",
+            field: "unitsSold",
+            sorting: false,
+            render: (rowData: { unitsSold: { toLocaleString: () => any; }; }) => rowData.unitsSold.toLocaleString()
         },
         {
-            Header: "RETAILER MARGIN",
-            id: "retailerMargin",
+            title: "RETAILER MARGIN",
+            field: "retailerMargin",
+            sorting: false,
+            render: (rowData: { retailerMargin: { toLocaleString: () => any; }; }) => `$${rowData.retailerMargin.toLocaleString()}`
         },
     ];
 
@@ -38,36 +50,18 @@ const ProductTable: React.FC = () => {
 
     return (
         <div className="product-table-container">
-            <table className={"product-table"}>
-                <thead>
-                    <tr>
-                        {columns.map((column) => (
-                            <th key={column.id}>
-                                {column.Header}
-                            </th>
-                        ))}
-                    </tr>
-                </thead>
-                <tbody>
-                {data.map((row, rowIndex) => (
-                    <tr key={rowIndex}>
-                        {columns.map((column, colIndex) => (
-                            <td key={colIndex}>
-                                {column.id ==="weekEnding" ? format(parseISO(row[column.id]), "MM-dd-yy") :
-                                    column.id === "retailSales" || column.id === "wholesaleSales"
-                                || column.id === "retailerMargin" ? `$${(row as any)[column.id].toLocaleString()}`
-                                : (row as any)[column.id].toLocaleString
-                                ? (row as any)[column.id].toLocaleString()
-                                : (row as any)[column.id]}
-                            </td>
-                        ))}
-                    </tr>
-                ))}
-                </tbody>
-            </table>
+            <MaterialTable
+                title={""}
+                columns={columns}
+                data={data}
+                options={{
+                    pageSize: 20,
+                    pageSizeOptions: [20, 40, 60],
+                    paging: true,
+                }}
+            />
         </div>
     );
 };
-
 
 export default ProductTable;
