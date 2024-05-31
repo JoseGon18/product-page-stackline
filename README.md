@@ -1,3 +1,17 @@
+# Documentation
+
+This is the submission for the web assessment for Stackline. If you are here, thanks for taking the time to review my submission. 
+
+## Notes
+
+For this assessment I went forward with implementing both table and graph for the product data. On top of this, the Product Details section was implemented. 
+
+## Final Thanks
+
+I would like to express my thanks for considering me for the role at Stackline and for taking the time to review this submission. 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
