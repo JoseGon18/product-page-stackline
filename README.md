@@ -1,7 +1,6 @@
 # Documentation
 
-This is the submission for the web assessment for Stackline. If you are here, thanks for taking the time to review my submission. 
-
+This is the submission for the web assessment for Stackline.
 ## Notes
 
 For this assessment I went forward with implementing both table and graph for the product data. On top of this, the Product Details section was implemented. 
