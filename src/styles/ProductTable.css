@@ -1,0 +1,30 @@
+.product-table-container {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: auto;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th, .product-table td {
+    border: none;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.product-table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.product-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    text-align: left;
+}

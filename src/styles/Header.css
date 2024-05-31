@@ -1,0 +1,13 @@
+.header {
+    background-color: rgb(12, 36, 62);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+
+.logo {
+    height: 30px;
+    padding-left: 0.1rem;
+}
